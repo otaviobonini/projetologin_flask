@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registre-se</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    
+</head>
+<body>
+    <main class="containeroutro">
+        <form action='/register' method="post">
+            <h1>Faça seu registro</h1>
+            <!-- Se houver erro -->
+{% if error %}
+  <p style="color: red;">{{ error }}</p>
+{% endif %}
+
+<!-- Se houver sucesso -->
+{% if success %}
+  <div id="success-msg" style="color: green;">{{ success }}</div>
+
+  <script>
+    // espera 2 segundos (2000ms) e redireciona para /login
+    setTimeout(function() {
+      window.location.href = "{{ url_for('login') }}";
+    }, 2000);
+  </script>
+{% endif %}
+
+            <div class="input-box">
+                <input name="email" placeholder="Email" type="email" required>
+                <i class="bx bxs-envelope"></i>
+            </div>
+
+            <div class="input-box">
+                <input name='username' placeholder="Nome" type="text" required>
+                <i class="bx bxs-user"></i>
+            </div>
+
+            <div class="input-box">
+                <input name='password' placeholder="Senha" type="password" required>
+                <i class="bx bxs-lock-alt"></i>
+            </div>
+
+            <div class="input-box">
+                <input name='confirm_password' placeholder="Confirme a senha" type="password" required>
+                <i class="bx bxs-lock-alt"></i>
+            </div>
+
+            <button class="login" id="registro-botao" type="submit">Registre</button>
+
+            <div class="register-link">
+                <p>Já tem uma conta? <a href="{{ url_for('login') }}">Ir para Login</a></p>
+            </div>
+        </form>
+    </main>
+</body>
+</html>
+

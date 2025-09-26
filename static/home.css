@@ -1,0 +1,42 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(dave2d-mc5l2xx78hlqf8ej.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    width: 420px;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    padding: 30px 40px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+
+.container h1 {
+    font-size: 36px;
+    text-align: center;
+
+}
+
+.logout {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    display: block;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+
+.logout:hover {
+    text-decoration: underline;
+}
